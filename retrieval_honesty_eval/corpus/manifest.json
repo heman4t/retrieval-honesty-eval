@@ -1,0 +1,12 @@
+{
+  "files": {
+    "docs/ROADMAP.md": {"status": "active", "role": "project_authority"},
+    "docs/archive/ROADMAP-2024.md": {"status": "superseded", "role": "project_authority"},
+    "docs/adr/0001-postgres-system-of-record.md": {"status": "active", "role": "accepted_decision"},
+    "docs/adr/0002-no-silent-fallbacks.md": {"status": "active", "role": "accepted_decision"},
+    "docs/adr/0003-webhook-retries.md": {"status": "superseded", "role": "accepted_decision"},
+    "docs/adr/0004-webhook-retry-backoff.md": {"status": "active", "role": "accepted_decision"},
+    "docs/standards/code-review.md": {"status": "active", "role": "binding_standard"},
+    "docs/notes/2025-03-incident-review.md": {"status": "active", "role": "secondary_reference"}
+  }
+}

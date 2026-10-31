@@ -1,0 +1,31 @@
+# Fully local run: a model served by Ollama on this machine, no hosted calls, nothing pushed.
+model = "qwen3.5:9b"
+max_concurrent = 1
+push = false
+rich = false
+
+[env.taskset]
+id = "retrieval-honesty-eval"
+
+[env.agent]
+max_turns = 6
+max_output_tokens = 8192
+
+[env.agent.harness]
+id = "null"
+
+[env.agent.runtime]
+type = "subprocess"
+
+[env.agent.timeout]
+rollout = 600
+
+[client]
+type = "eval"
+base_url = "http://127.0.0.1:11434/v1"
+api_key_var = "OLLAMA_API_KEY"
+
+[sampling]
+reasoning_effort = "none"
+temperature = 0.0
+max_tokens = 4096

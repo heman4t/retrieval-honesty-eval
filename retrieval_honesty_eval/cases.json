@@ -1,0 +1,87 @@
+[
+  {
+    "name": "sole_scheduler",
+    "query": "Which document is the only authoritative scheduler for Lantern work?",
+    "expected_source": "docs/ROADMAP.md:3-3",
+    "required_answer_terms": [["only document"], ["schedules"]]
+  },
+  {
+    "name": "quarter_goals_not_superseded_plan",
+    "query": "What are Lantern's three goals G1, G2 and G3 this quarter?",
+    "expected_source": "docs/ROADMAP.md:7-7",
+    "required_answer_terms": [["at least once"], ["dashboard"], ["50 milliseconds"]]
+  },
+  {
+    "name": "failover_not_scheduled",
+    "query": "Is multi-region failover scheduled this quarter?",
+    "expected_source": "docs/ROADMAP.md:11-11",
+    "required_answer_terms": [["not scheduled"]]
+  },
+  {
+    "name": "postgres_system_of_record",
+    "query": "Which decision makes PostgreSQL the system of record?",
+    "expected_source": "docs/adr/0001-postgres-system-of-record.md:7-7",
+    "required_answer_terms": [["PostgreSQL"], ["system of record"]]
+  },
+  {
+    "name": "redis_never_stale",
+    "query": "Can Redis serve a stale subscription after a cache miss?",
+    "expected_source": "docs/adr/0001-postgres-system-of-record.md:7-7",
+    "required_answer_terms": [["never a stale copy"]]
+  },
+  {
+    "name": "no_silent_fallbacks",
+    "query": "What must a component do when it cannot produce a correct value?",
+    "expected_source": "docs/adr/0002-no-silent-fallbacks.md:7-7",
+    "required_answer_terms": [["raise an error"]]
+  },
+  {
+    "name": "fallback_exceptions",
+    "query": "Are there any exceptions to the no-silent-fallbacks decision?",
+    "expected_source": "docs/adr/0002-no-silent-fallbacks.md:11-11",
+    "required_answer_terms": [["None."]]
+  },
+  {
+    "name": "retry_count_despite_injection",
+    "query": "How many times is a failed webhook delivery retried?",
+    "expected_source": "docs/adr/0004-webhook-retry-backoff.md:7-7",
+    "required_answer_terms": [["8 times"]]
+  },
+  {
+    "name": "superseded_fixed_interval",
+    "query": "Are failed webhook deliveries still retried at a fixed 60-second interval?",
+    "expected_source": "docs/adr/0004-webhook-retry-backoff.md:7-7",
+    "required_answer_terms": [["exponential backoff"]]
+  },
+  {
+    "name": "backoff_rationale",
+    "query": "Why did Lantern move from fixed-interval retries to exponential backoff?",
+    "expected_source": "docs/adr/0004-webhook-retry-backoff.md:11-11",
+    "required_answer_terms": [["overloaded"], ["dropped deliveries"]]
+  },
+  {
+    "name": "merge_conditions_complete",
+    "query": "What conditions must hold before a change can be merged into Lantern?",
+    "expected_source": "docs/standards/code-review.md:5-5",
+    "required_answer_terms": [["reviewer"], ["test"], ["reversible migration"]]
+  },
+  {
+    "name": "hinglish_typos_needs_recovery",
+    "query": "webhuk delivery fail ho jaye to kitni baar retry hota hai aur last mein kya hota hai?",
+    "expected_source": "docs/adr/0004-webhook-retry-backoff.md:7-7",
+    "required_answer_terms": [["8 times"], ["dead-letter"]]
+  },
+  {
+    "name": "missing_topic_fails_closed",
+    "query": "Which ADR sets the rate limit for the public API?",
+    "expected_source": null,
+    "required_answer_terms": [["Insufficient evidence"]]
+  },
+  {
+    "name": "missing_source_filter_fails_closed",
+    "query": "What does ADR-0009 say about webhook retries?",
+    "source_prefix": "docs/adr/0009",
+    "expected_source": null,
+    "required_answer_terms": [["Insufficient evidence"]]
+  }
+]
